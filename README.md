@@ -19,7 +19,7 @@ My goal is to mirror the way the Wizard101 backpack works for equipment as close
 * The abiility to equip any item and jewel
 * The ability to search for these items given the categories and items present on Wizard101Central.com
 
-For a more granular breakdown, see the [design documentation](DESIGN.md)
+For a more granular breakdown, see the [design documentation](docs/DESIGN.md)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
