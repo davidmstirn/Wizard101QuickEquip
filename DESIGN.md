@@ -59,11 +59,30 @@ For more granular requirements, see the [security documentation](SECURITY.md)
 # User Interface
 ## Mockups
 ![User interface mockup for wizard basic statistics](mockup1.png "Basic statistics")
+Here we see the basic statistics page for the app.
+Damage, resist, and accuracy are aggregated from the equipment the wizard is using.
+Hovering over one of the stats provides a popup listing each piece of gear and the amount it contributes.
+It has navigation to the advanced statistics as well as the backpack.
 ![User interface mockup for wizard advanced statistics](mockup2.png "Advanced statistics")
+Here we see the advanced statistics page for the app.
+This functions the same as the basic statistics, but with a different set of advanced statistics.
+It has navigation to the basic statistics as well as the backpack.
 ![User interface mockup for wizard backpack](mockup3.png "Backpack")
+Here we see the backpack page for the app.
+![User interface mockup for wizard backpack with search](mockup6.png "Backpack with search")
+Across the top is a tab for all items, a tab for each item type, and a special tab that contains a search menu for finding and filtering gear.
+On the left side is an image for the currently selected item.
+There is also a count of backpack capacity and a button for gear set management.
+On the right are a set of pages for the type chosen listing all items of that type.
+There are icons next to each item denoting whether it is equipped and if it is a crowns item.
+The item will be highlighted as well if equipped.
+Along the bottom are buttons for switching pages, viewing jewels for an item, equipping/unequipping an item, and trashing an item.
+It has navigation to the basic statistics.
 
-## Wireframes
-WIP
+The two types of statistics are essentially tabs, while the backpack is a new "page".
+This app will not have any page loads once inside, but login and logout will cause reloads.
+![User interface mockup for login page](mockup4.png "Login Page")
+![User interface mockup for signup page](mockup5.png "Signup Page")
 
 # Milestones and Prioritization
 ## Milestones
@@ -102,3 +121,4 @@ WIP
 ### Debate
 * Jewels
 * Gear sorting
+* Gear sets
