@@ -58,18 +58,25 @@ For more granular requirements, see the [security documentation](SECURITY.md)
 
 # User Interface
 ## Mockups
-![User interface mockup for wizard basic statistics](mockup1.png "Basic statistics")
+![User interface mockup for wizard selection](mockup_wizards.png "Wizard Selection")
+Here we see the wizard selection page for the app.
+This will be the landing page whenever someone logs in.
+Users can edit, create, and delete their wizards from this page.
+![User interface mockup for wizard creation](mockup_wizards_create.png "Wizard Creation")
+![User interface mockup for wizard deletion](mockup_wizards_delete.png "Wizard Deletion")
+Popups for creating and deleting wizards.
+![User interface mockup for wizard basic statistics](mockup_basic_stats.png "Basic statistics")
 Here we see the basic statistics page for the app.
 Damage, resist, and accuracy are aggregated from the equipment the wizard is using.
 Hovering over one of the stats provides a popup listing each piece of gear and the amount it contributes.
 It has navigation to the advanced statistics as well as the backpack.
-![User interface mockup for wizard advanced statistics](mockup2.png "Advanced statistics")
+![User interface mockup for wizard advanced statistics](mockup_adv_stats.png "Advanced statistics")
 Here we see the advanced statistics page for the app.
 This functions the same as the basic statistics, but with a different set of advanced statistics.
 It has navigation to the basic statistics as well as the backpack.
-![User interface mockup for wizard backpack](mockup3.png "Backpack")
+![User interface mockup for wizard backpack](mockup_backpack_generic.png "Backpack")
 Here we see the backpack page for the app.
-![User interface mockup for wizard backpack with search](mockup6.png "Backpack with search")
+![User interface mockup for wizard backpack with search](mockup_backpack_search.png "Backpack with search")
 Across the top is a tab for all items, a tab for each item type, and a special tab that contains a search menu for finding and filtering gear.
 On the left side is an image for the currently selected item.
 There is also a count of backpack capacity and a button for gear set management.
@@ -81,8 +88,9 @@ It has navigation to the basic statistics.
 
 The two types of statistics are essentially tabs, while the backpack is a new "page".
 This app will not have any page loads once inside, but login and logout will cause reloads.
-![User interface mockup for login page](mockup4.png "Login Page")
-![User interface mockup for signup page](mockup5.png "Signup Page")
+![User interface mockup for login page](mockup_login.png "Login Page")
+![User interface mockup for signup page](mockup_register.png "Signup Page")
+![User interface mockup for profile page](mockup_profile.png "Profile Page")
 
 # Milestones and Prioritization
 ## Milestones
