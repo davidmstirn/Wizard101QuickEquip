@@ -13,6 +13,14 @@ An individual will create one or more wizards and customize their equipment to a
 This scope does not include spell decks, reagents, spellements, quests, monsters, or any other resource.
 
 ## Data Flow
+### Database
+A MySQL database hosted with the server is planned.
+This database will only be directly accessible by the server.
+The current working ER diagram is [here](ERDiagram.dia), rendered below for your conveinence.
+![image](https://user-images.githubusercontent.com/83716239/167748462-06bedf91-54b7-4ff7-be87-34a7c374af07.png)
+The database will store all user info, wizard info, and gear info.
+Gear info is saved either oppurtunistically as it is requested from wizard101central.com or manually by contributors to the app.
+
 ### Authentication
 The user will create their account and login from the client, making a POST request over https to the server.
 The server will handle account creation and authentication and then return either a session or an error message to the client.
