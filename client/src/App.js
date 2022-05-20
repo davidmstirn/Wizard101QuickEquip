@@ -1,23 +1,29 @@
 import React from "react";
-import logo from './logo.svg';
-import './App.css';
+import {
+  NavLink,
+  Outlet
+} from "react-router-dom";
+import './css/App.css';
 
 function App() {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
-    </div>
+      <div className="App">
+        <nav>
+          <NavLink
+            to='home'
+            data-testid='navHome'
+            className={({ isActive }) => isActive? "current" : ""}>
+            Home
+          </NavLink>
+          <NavLink 
+            to='select'
+            data-testid='navSelect'
+            className={({ isActive }) => isActive? "current" : ""}>
+            Wizard Select
+          </NavLink>
+        </nav>
+        <Outlet />
+      </div>
   );
 }
 

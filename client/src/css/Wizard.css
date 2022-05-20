@@ -1,0 +1,32 @@
+.SpellBookFrame {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+h2 {
+    grid-area: 1 / 1 / 4 / 2;
+    z-index: 2;
+    margin: 10px 30% ;
+    padding-bottom: 4px;
+    background-color: tan;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.Spellbook {
+    grid-area: 3 / 1 / 8 / 2;
+    z-index: 1;
+    padding-top: 10px;
+    margin: 0 20%;
+    background-color: tan;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.Character {
+    display: grid;
+    grid-template-columns: 47.5% 5% 47.5%;
+    align-items: center;
+    justify-content: center;
+}

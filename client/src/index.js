@@ -1,13 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './css/index.css';
 import App from './App';
+import Home from './routes/Home';
+import WizardSelect from './routes/WizardSelect';
+import Wizard from './routes/Wizard';
+import NoRoute from './routes/NoRoute';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
+ } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="select" element={<WizardSelect />} />
+          <Route path="show">
+            <Route path=":wizardId" element={<Wizard />} />
+          </Route>
+        </Route>
+        <Route path="*" element={<NoRoute />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

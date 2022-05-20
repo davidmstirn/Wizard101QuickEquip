@@ -1,0 +1,28 @@
+.WizardSelector {
+    padding-top: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: tan;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+}
+
+label.current {
+    color: brown;
+    font-weight: bold;
+}
+
+/* Hides default radio button */
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+}

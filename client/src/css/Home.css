@@ -1,0 +1,13 @@
+.HomeFrame {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+h1 {
+    margin: 10px 30% ;
+    padding-bottom: 4px;
+    background-color: tan;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 30px;
+}
