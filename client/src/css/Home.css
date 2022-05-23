@@ -3,7 +3,7 @@
     grid-template-columns: auto;
 }
 
-h1 {
+.HomeHeader {
     margin: 10px 30% ;
     padding-bottom: 4px;
     background-color: tan;

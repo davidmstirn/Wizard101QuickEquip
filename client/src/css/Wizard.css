@@ -1,9 +1,9 @@
-.SpellBookFrame {
+.SpellbookFrame {
     display: grid;
     grid-template-columns: auto;
 }
 
-h2 {
+.SpellbookHeader {
     grid-area: 1 / 1 / 4 / 2;
     z-index: 2;
     margin: 10px 30% ;

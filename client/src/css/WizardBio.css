@@ -26,7 +26,7 @@
 
 .StatBox {
     display: inline-block;
-    width: 49%;
+    width: 48%;
     margin-top: 5px;
     background-color: tan;
     border: 2px solid black;
@@ -37,6 +37,11 @@
     margin-right: 2%;
 }
 
-p {
+.StatBoxHeader {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.StatBoxContent {
     margin: 10px;
 }

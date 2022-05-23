@@ -7,17 +7,17 @@
     border-radius: 10px;
 }
 
-label {
+.WizardSelector > label {
     display: block;
 }
 
-label.current {
+.WizardSelector > label.current {
     color: brown;
     font-weight: bold;
 }
 
 /* Hides default radio button */
-input[type="radio"] {
+.WizardSelector > label > input[type="radio"] {
     /* Add if not using autoprefixer */
     -webkit-appearance: none;
     appearance: none;

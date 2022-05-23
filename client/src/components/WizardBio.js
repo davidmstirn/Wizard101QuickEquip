@@ -16,12 +16,12 @@ function WizardBio(props) {
       </div>
       <div className='InateStats'>
         <div className='StatBox'>
-          <p>Health</p>
-          <p>{getHealth(props.school, props.level)}</p>
+          <p className='StatBoxHeader'>Health</p>
+          <p className='StatBoxContent'>{getHealth(props.school, props.level)}</p>
         </div>
         <div className='StatBox'>
-          <p>Mana</p>
-          <p>{getMana(props.school, props.level)}</p>
+          <p className='StatBoxHeader'>Mana</p>
+          <p className='StatBoxContent'>{getMana(props.school, props.level)}</p>
         </div>
       </div>
     </div>
