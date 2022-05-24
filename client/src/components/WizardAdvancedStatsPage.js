@@ -14,7 +14,7 @@ function WizardAdvancedStatsPage(props) {
       <WizardSchoolStat statTitle='Armor Piercing' statFirstName='Pierce' statFirst={getPierce(wizard)} />
       <div>
       <WizardStat statTitle='Stun Resistance' statIsPercent='true' statFirstName='StunResist' statFirst={getStunResist(wizard)} />
-      <WizardStat statTitle='Healing (In / Out)' statIsPercent='true' statFirstName='Incoming' statFirst={getHealing(wizard)[0]} statSecondName='Outgoing' statSecond={getHealing(wizard)[1]} />
+      <WizardStat statTitle='Healing (In / Out)' statIsPercent='true' statFirstName='Incoming' statFirst={getHealing(wizard) ? getHealing(wizard)[0] : 0} statSecondName='Outgoing' statSecond={getHealing(wizard) ? getHealing(wizard)[1] : 0} />
       </div>
     </>,
     <>

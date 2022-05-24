@@ -30,9 +30,6 @@ function WizardSchoolStat(props) {
 
   let statSecondName = props.statSecondName;
   let statSecond = props.statSecond;
-  if(!statSecond) {
-    statSecond = [0,0,0,0,0,0,0,0];
-  }
   let statSecondVals = '';
   if(statSecond)
   {
@@ -63,12 +60,8 @@ function WizardSchoolStat(props) {
       </tr>
       </thead>
       <tbody>
-      <tr className='StatTableValues'>
-        {statFirstVals ? statFirstVals : ''}
-      </tr>
-      <tr className='StatTableValues'>
-        {statSecondVals ? statSecondVals : ''}
-      </tr>
+        {statFirstVals ? <tr className='StatTableValues'>{statFirstVals}</tr> : ''}
+        {statSecondVals ? <tr className='StatTableValues'>{statSecondVals}</tr> : ''}
       </tbody>
       </table>
     </div>
