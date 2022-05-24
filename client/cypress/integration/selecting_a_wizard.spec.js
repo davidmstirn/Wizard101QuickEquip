@@ -5,7 +5,7 @@ describe('Selecting a wizard', () => {
         cy.get('[data-testid="navSelect"]')
         .click();
 
-        cy.get('[data-testid="wizardOption0"]')
+        cy.get('[data-testid="wizardLabel0"]')
         .click();
 
         cy.get('[data-testid="wizardShow"]')

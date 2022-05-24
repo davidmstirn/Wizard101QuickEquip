@@ -22,6 +22,7 @@ function WizardSelect(props) {
           <label
             key={index}
             className={selectedWizard === index ? "current" : ""}
+            data-testid={'wizardLabel'+index}
             >
             <input
               type="radio"
