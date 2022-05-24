@@ -30,6 +30,14 @@ export function getMana(school, level) {
   return 400;
 }
 
+export function getEnergy(school, level) {
+  return 130;
+}
+
+export function getFishingLuck(school, level) {
+  return 2;
+}
+
 export function getDamage(wizard) {
   return wizard.damage;
 }

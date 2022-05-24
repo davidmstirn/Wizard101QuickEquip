@@ -22,5 +22,13 @@ describe('<WizardBio />', () => {
     it('wizard mana shows', () => {
       expect(screen.getByTestId('wizardTestMana')).not.toHaveTextContent('');
     });
+
+    it('wizard energy shows', () => {
+      expect(screen.getByTestId('wizardTestEnergy')).not.toHaveTextContent('');
+    });
+
+    it('wizard fishing luck shows', () => {
+      expect(screen.getByTestId('wizardTestFishingLuck')).not.toHaveTextContent('');
+    });
   });
 });

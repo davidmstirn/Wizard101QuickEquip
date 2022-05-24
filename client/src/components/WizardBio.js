@@ -1,9 +1,12 @@
 import {
   getTitle,
   getHealth,
-  getMana
+  getMana,
+  getEnergy,
+  getFishingLuck
 } from '../data'
 import '../css/WizardBio.css'
+import WizardStat from './WizardStat';
 
 function WizardBio(props) {
   return(
@@ -18,18 +21,10 @@ function WizardBio(props) {
         {props.school}
       </div>
       <div className='InateStats'>
-        <div className='StatBox'>
-          <p className='StatBoxHeader'>Health</p>
-          <p className='StatBoxContent'
-            data-testid='wizardTestHealth'>
-            {getHealth(props.school, props.level)}</p>
-        </div>
-        <div className='StatBox'>
-          <p className='StatBoxHeader'>Mana</p>
-          <p className='StatBoxContent'
-            data-testid='wizardTestMana'>
-            {getMana(props.school, props.level)}</p>
-        </div>
+        <WizardStat statTitle="Health" statFirstName="Health" statFirst={getHealth(props.school, props.level)} />
+        <WizardStat statTitle="Mana" statFirstName="Mana" statFirst={getMana(props.school, props.level)} />
+        <WizardStat statTitle="Energy" statFirstName="Energy" statFirst={getEnergy(props.school, props.level)} />
+        <WizardStat statTitle="Fishing Luck" statIsPercent="true" statFirstName="FishingLuck" statFirst={getFishingLuck(props.school, props.level)} />
       </div>
     </div>
   )

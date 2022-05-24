@@ -1,0 +1,21 @@
+.StatBox {
+    display: inline-block;
+    width: 48%;
+    margin-top: 5px;
+    background-color: tan;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.StatBox:nth-child(odd) {
+    margin-right: 2%;
+}
+
+.StatBoxHeader {
+    margin: 10px;
+    font-weight: bold;
+}
+
+.StatBoxContent {
+    margin: 10px;
+}
