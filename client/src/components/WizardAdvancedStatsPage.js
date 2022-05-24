@@ -1,4 +1,4 @@
-import { getCritical, getBlock, getPierce, getStunResist, getHealing } from '../data';
+import { getCritical, getBlock, getPierce, getStunResist, getHealing, getPipConversion, getPowerPip, getShadowPip } from '../data';
 import WizardSchoolStat from './WizardSchoolStat';
 import WizardStat from './WizardStat';
 
@@ -15,6 +15,13 @@ function WizardAdvancedStatsPage(props) {
       <div>
       <WizardStat statTitle='Stun Resistance' statIsPercent='true' statFirstName='StunResist' statFirst={getStunResist(wizard)} />
       <WizardStat statTitle='Healing (In / Out)' statIsPercent='true' statFirstName='Incoming' statFirst={getHealing(wizard)[0]} statSecondName='Outgoing' statSecond={getHealing(wizard)[1]} />
+      </div>
+    </>,
+    <>
+      <WizardSchoolStat statTitle='Pip Conversion' statFirstName='PipConversion' statFirst={getPipConversion(wizard)} />
+      <div>
+      <WizardStat statTitle='Power Pips' statIsPercent='true' statFirstName='PowerPip' statFirst={getPowerPip(wizard)} />
+      <WizardStat statTitle='Shadow Pip Rating' statFirstName='ShadowPip' statFirst={getShadowPip(wizard)} />
       </div>
     </>
   ];

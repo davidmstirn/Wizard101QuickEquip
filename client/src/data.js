@@ -9,7 +9,10 @@ let wizards = [
     block: [200, 220, 230, 200, 200, 200, 200, 200],
     pierce: [21, 0, 0, 0, 0, 0, 0, 0],
     stunResist: 5,
-    healing: [23, 16] },
+    healing: [23, 16],
+    pipConversion: [600, 200, 200, 110, 110, 110, 110, 0],
+    powerPip: 99,
+    shadowPip: 120 },
   { id: 1, name: "Artur Lifehaven", school: "Life", level: 150 }
 ];
 
@@ -81,4 +84,16 @@ export function getStunResist(wizard) {
 
 export function getHealing(wizard) {
   return wizard.healing;
+}
+
+export function getPipConversion(wizard) {
+  return wizard.pipConversion;
+}
+
+export function getPowerPip(wizard) {
+  return wizard.powerPip;
+}
+
+export function getShadowPip(wizard) {
+  return wizard.shadowPip;
 }
