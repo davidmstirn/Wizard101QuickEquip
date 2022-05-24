@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { getAccuracy, getDamage, getDamageFlat, getResist, getResistFlat, getWizard } from "../data";
+import { getWizard } from "../data";
 import WizardBio from "../components/WizardBio";
-import WizardBasicStats from "../components/WizardBasicStats"
+import WizardStatPager from "../components/WizardStatPager";
 import "../css/Wizard.css"
 
 export default function Wizard() {
@@ -15,12 +15,7 @@ export default function Wizard() {
           <WizardBio school={wizard.school} level={wizard.level}/>
           <div className='Divider'/>
           <div className='Stats'>
-            <WizardBasicStats
-              damage={getDamage(wizard)}
-              damageFlat={getDamageFlat(wizard)}
-              resist={getResist(wizard)}
-              resistFlat={getResistFlat(wizard)}
-              accuracy={getAccuracy(wizard)}/>
+            <WizardStatPager wizard={wizard}/>
           </div>
         </div>
       </div>

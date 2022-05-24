@@ -1,0 +1,39 @@
+.PagerFrame {
+  text-align: center;
+}
+
+.PagerFrame a {
+  font-weight: bold;
+  color: #673f16;
+  text-decoration: none;
+}
+
+.PagerFrame a:hover {
+  color: brown;
+}
+
+.PagerNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color:tan;
+  border-bottom: 2px solid black;
+}
+
+.PagerNav a {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #673f16;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.PagerNav a.current {
+  border-bottom: 3px solid black;
+}
+
+.PagerNav + * {
+  margin-top: 20px;
+}

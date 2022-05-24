@@ -5,13 +5,13 @@ import App from './App';
 import Home from './routes/Home';
 import WizardSelect from './routes/WizardSelect';
 import Wizard from './routes/Wizard';
+import WizardBasicStatsHelper from './routes/WizardBasicStatsHelper';
 import NoRoute from './routes/NoRoute';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Navigate
+  Route
  } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,7 +24,11 @@ root.render(
           <Route path="home" element={<Home />} />
           <Route path="select" element={<WizardSelect />} />
           <Route path="show">
-            <Route path=":wizardId" element={<Wizard />} />
+            <Route path=":wizardId" element={<Wizard />} >
+              <Route index element={<WizardBasicStatsHelper />} />
+              <Route path="basic" element={<WizardBasicStatsHelper />} />
+              <Route path="*" element={<NoRoute />} />
+            </Route>
           </Route>
         </Route>
         <Route path="*" element={<NoRoute />} />
