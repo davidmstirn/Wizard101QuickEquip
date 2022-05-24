@@ -4,7 +4,12 @@ let wizards = [
     damageFlat: [20, 0, 0, 0, 0, 0, 0, 0],
     resist: [23, 23, 23, 23, 23, 23, 23, 23],
     resistFlat: [0, 0, 101, 0, 0, 0, 0, 0],
-    accuracy: [40, 6, 6, 0, 0, 0, 0, 0]},
+    accuracy: [40, 6, 6, 0, 0, 0, 0, 0],
+    critical: [700, 90, 90, 0, 0, 0, 0, 0],
+    block: [200, 220, 230, 200, 200, 200, 200, 200],
+    pierce: [21, 0, 0, 0, 0, 0, 0, 0],
+    stunResist: 5,
+    healing: [23, 16] },
   { id: 1, name: "Artur Lifehaven", school: "Life", level: 150 }
 ];
 
@@ -56,4 +61,24 @@ export function getResistFlat(wizard) {
 
 export function getAccuracy(wizard) {
   return wizard.accuracy;
+}
+
+export function getCritical(wizard) {
+  return wizard.critical;
+}
+
+export function getBlock(wizard) {
+  return wizard.block;
+}
+
+export function getPierce(wizard) {
+  return wizard.pierce;
+}
+
+export function getStunResist(wizard) {
+  return wizard.stunResist;
+}
+
+export function getHealing(wizard) {
+  return wizard.healing;
 }

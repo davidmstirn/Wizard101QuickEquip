@@ -16,7 +16,7 @@ function WizardStatPager(props) {
             Basic
           </NavLink>
           <NavLink 
-            to='advanced'
+            to='advanced/1'
             data-testid='statPagerAdvanced'
             className={({ isActive }) => isActive? "current" : ""}>
             Advanced

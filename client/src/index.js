@@ -6,6 +6,8 @@ import Home from './routes/Home';
 import WizardSelect from './routes/WizardSelect';
 import Wizard from './routes/Wizard';
 import WizardBasicStatsHelper from './routes/WizardBasicStatsHelper';
+import WizardAdvancedStatsHelper from './routes/WizardAdvancedStatsHelper';
+import WizardAdvancedStatsPageHelper from './routes/WizardAdvancedStatsPageHelper';
 import NoRoute from './routes/NoRoute';
 import reportWebVitals from './reportWebVitals';
 import {
@@ -27,6 +29,9 @@ root.render(
             <Route path=":wizardId" element={<Wizard />} >
               <Route index element={<WizardBasicStatsHelper />} />
               <Route path="basic" element={<WizardBasicStatsHelper />} />
+              <Route path="advanced" element={<WizardAdvancedStatsHelper />} >
+                <Route path=":pageId" element={<WizardAdvancedStatsPageHelper />} />
+              </Route>
               <Route path="*" element={<NoRoute />} />
             </Route>
           </Route>
