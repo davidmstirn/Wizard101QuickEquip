@@ -12,5 +12,8 @@ describe('Selecting a wizard', () => {
         .click();
 
         cy.contains('Level');
+        cy.contains('Damage');
+        cy.contains('Resist');
+        cy.contains('Accuracy');
     });
 });

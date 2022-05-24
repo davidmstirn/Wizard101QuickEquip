@@ -27,6 +27,10 @@
 .Character {
     display: grid;
     grid-template-columns: 47.5% 5% 47.5%;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+}
+
+.Stats {
+    margin: 10px;
 }

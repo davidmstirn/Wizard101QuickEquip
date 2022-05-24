@@ -1,0 +1,32 @@
+.StatFrame + .StatFrame{
+    margin-top: 20px;
+}
+
+.StatFrame p {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+.StatTable {
+    width: 100%;
+    font-size: 1em;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.StatTable img {
+    height: 30px;
+    vertical-align: middle;
+}
+
+.StatTable tr.StatTableIcons {
+    border: 2px solid black;
+}
+
+.StatTable td {
+    border: 1px solid black;
+}
+
+.StatTable td {
+    height: 1.5em;
+}
