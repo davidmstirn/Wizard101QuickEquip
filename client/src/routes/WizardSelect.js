@@ -9,6 +9,8 @@ import { getWizards } from '../data'
 
 function WizardSelect(props) {
   let context = useOutletContext();
+  if(!context) context = props;
+  
   let selectedWizard = context.selectedWizard;
   let setSelectedWizard = context.setSelectedWizard;
   
