@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import WizardAdvancedStatsPage from '../components/WizardAdvancedStatsPage';
+import { WizardAdvancedStatsPage } from '../components/WizardAdvancedStatsPage';
 
 describe('<WizardAdvancedStatsPage />', () => {
   describe('showing the wizard advanced stats (page 1)', () => {
