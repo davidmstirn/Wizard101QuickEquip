@@ -22,26 +22,7 @@
 .InateStats {
     grid-area: 3 / 1 / 3 / 3;;
     font-size: 20px;
-}
-
-.StatBox {
-    display: inline-block;
-    width: 48%;
-    margin-top: 5px;
-    background-color: tan;
-    border: 2px solid black;
-    border-radius: 10px;
-}
-
-.StatBox:nth-child(odd) {
-    margin-right: 2%;
-}
-
-.StatBoxHeader {
-    margin: 10px;
-    font-weight: bold;
-}
-
-.StatBoxContent {
-    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 10px;
 }

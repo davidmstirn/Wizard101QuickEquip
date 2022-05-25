@@ -1,3 +1,4 @@
+import '../css/WizardAdvancedStatsPage.css';
 import { getCritical, getBlock, getPierce, getStunResist, getHealing, getPipConversion, getPowerPip, getShadowPip } from '../data';
 import WizardSchoolStat from './WizardSchoolStat';
 import WizardStat from './WizardStat';
@@ -12,14 +13,14 @@ export function WizardAdvancedStatsPage(props) {
       <WizardSchoolStat statTitle='Critical Rating' statFirstName='Critical' statFirst={getCritical(wizard)} />
       <WizardSchoolStat statTitle='Block Rating' statFirstName='Block' statFirst={getBlock(wizard)} />
       <WizardSchoolStat statTitle='Armor Piercing' statFirstName='Pierce' statFirst={getPierce(wizard)} />
-      <div>
+      <div className='AdvancedStatPair'>
       <WizardStat statTitle='Stun Resistance' statIsPercent='true' statFirstName='StunResist' statFirst={getStunResist(wizard)} />
       <WizardStat statTitle='Healing (In / Out)' statIsPercent='true' statFirstName='Incoming' statFirst={getHealing(wizard) ? getHealing(wizard)[0] : 0} statSecondName='Outgoing' statSecond={getHealing(wizard) ? getHealing(wizard)[1] : 0} />
       </div>
     </>,
     <>
       <WizardSchoolStat statTitle='Pip Conversion' statFirstName='PipConversion' statFirst={getPipConversion(wizard)} />
-      <div>
+      <div className='AdvancedStatPair'>
       <WizardStat statTitle='Power Pips' statIsPercent='true' statFirstName='PowerPip' statFirst={getPowerPip(wizard)} />
       <WizardStat statTitle='Shadow Pip Rating' statFirstName='ShadowPip' statFirst={getShadowPip(wizard)} />
       </div>

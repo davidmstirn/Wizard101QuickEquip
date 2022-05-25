@@ -1,4 +1,4 @@
-.AdvancedStats {
+.AdvancedFrame {
     font-size: 1rem;
 }
 
@@ -10,6 +10,6 @@
 }
 
 .AdvancedNav img {
-    height: 40px;
+    height: 2em;
     vertical-align: middle;
 }
