@@ -3,7 +3,7 @@ import WizardSchoolStat from './WizardSchoolStat';
 import WizardStat from './WizardStat';
 
 /* Converts from the outlet context to the WizardAdvancedStats */
-function WizardAdvancedStatsPage(props) {
+export function WizardAdvancedStatsPage(props) {
   let wizard = props.wizard;
   let page = props.page;
 
@@ -33,4 +33,6 @@ function WizardAdvancedStatsPage(props) {
   )
 }
 
-export default WizardAdvancedStatsPage;
+export function numPages() {
+  return 2;
+}

@@ -1,6 +1,6 @@
 import { useOutletContext, useParams } from 'react-router-dom';
 import { getAccuracy, getDamage, getDamageFlat, getResist, getResistFlat } from '../data';
-import WizardAdvancedStatsPage from '../components/WizardAdvancedStatsPage';
+import { WizardAdvancedStatsPage } from '../components/WizardAdvancedStatsPage';
 
 /* Converts from the outlet context to the WizardAdvancedStatsPage */
 function WizardAdvancedStatsPageHelper(props) {
