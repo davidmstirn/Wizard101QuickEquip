@@ -1,14 +1,17 @@
 import React from "react";
 import {
   Link,
-  Outlet
+  Outlet,
+  useOutletContext
 } from "react-router-dom";
 import "../css/WizardSelect.css"
 import { getWizards } from '../data'
 
 function WizardSelect(props) {
-  const [selectedWizard, setSelectedWizard] = React.useState(0);
-
+  let context = useOutletContext();
+  let selectedWizard = context.selectedWizard;
+  let setSelectedWizard = context.setSelectedWizard;
+  
   function onValueChange(event) {
     setSelectedWizard(parseInt(event.target.value))
   }
@@ -43,7 +46,7 @@ function WizardSelect(props) {
     <div className="WizardSelector">
       {wizardList}
       <Link
-        to={`/show/${selectedWizard}`}
+        to={`/show/${selectedWizard}/basic`}
         data-testid='wizardShow'>
           Show
       </Link>

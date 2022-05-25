@@ -6,6 +6,9 @@ import {
 import '../css/WizardStatPager.css';
 
 function WizardStatPager(props) {
+  const [advancedStatPage, setAdvancedStatPage] = React.useState(1);
+
+  let context = {setAdvancedStatPage: setAdvancedStatPage.bind(this), wizard: props.wizard}
   return (
       <div className="PagerFrame">
         <div className="PagerNav">
@@ -16,13 +19,13 @@ function WizardStatPager(props) {
             Basic
           </NavLink>
           <NavLink 
-            to='advanced/1'
+            to={'advanced/'+advancedStatPage}
             data-testid='statPagerAdvanced'
             className={({ isActive }) => isActive? "current" : ""}>
             Advanced
           </NavLink>
         </div>
-        <Outlet context={props.wizard}/>
+        <Outlet context={context}/>
       </div>
   );
 }

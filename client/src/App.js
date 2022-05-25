@@ -6,6 +6,9 @@ import {
 import './css/App.css';
 
 function App() {
+  const [selectedWizard, setSelectedWizard] = React.useState(0);
+
+  let context = {selectedWizard: selectedWizard, setSelectedWizard: setSelectedWizard.bind(this)};
   return (
       <div className="App">
         <nav>
@@ -22,7 +25,7 @@ function App() {
             Wizard Select
           </NavLink>
         </nav>
-        <Outlet />
+        <Outlet context={context}/>
       </div>
   );
 }

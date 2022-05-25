@@ -5,7 +5,8 @@ import WizardBasicStats from '../components/WizardBasicStats';
 
 /* Converts from the outlet context to the WizardBasicStats */
 function WizardBasicStatsHelper(props) {
-  let wizard = useOutletContext();
+  let context = useOutletContext();
+  let wizard = context.wizard;
   return(
     <WizardBasicStats
       damage={getDamage(wizard)}

@@ -7,6 +7,7 @@ import rightArrow from '../images/right-circular-128.png'
 function WizardAdvancedStats(props) {
   let params = useParams();
   let page = parseInt(params.pageId);
+  props.setAdvancedStatPage(page);
   let pages = numPages();
   
   return(
