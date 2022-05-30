@@ -1,12 +1,16 @@
 import '../css/WizardAdvancedStatsPage.css';
+import { useOutletContext, useParams } from 'react-router-dom';
 import { getCritical, getBlock, getPierce, getStunResist, getHealing, getPipConversion, getPowerPip, getShadowPip } from '../data';
-import WizardSchoolStat from './WizardSchoolStat';
-import WizardStat from './WizardStat';
+import WizardSchoolStat from '../components/WizardSchoolStat';
+import WizardStat from '../components/WizardStat';
 
 /* Converts from the outlet context to the WizardAdvancedStats */
 export function WizardAdvancedStatsPage(props) {
-  let wizard = props.wizard;
-  let page = props.page;
+  let context = useOutletContext();
+  let wizard = context.wizard;
+  
+  let params = useParams();
+  let page = parseInt(params.pageId);
 
   let pages = [
     <>

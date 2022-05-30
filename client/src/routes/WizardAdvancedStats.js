@@ -1,18 +1,21 @@
 import '../css/WizardAdvancedStats.css';
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useParams, useOutletContext } from 'react-router-dom';
 import { numPages } from './WizardAdvancedStatsPage';
 import leftArrow from '../images/left-circular-128.png'
 import rightArrow from '../images/right-circular-128.png'
 
 function WizardAdvancedStats(props) {
+  let context = useOutletContext();
+  if(!context) context = props;
+  
   let params = useParams();
   let page = parseInt(params.pageId);
-  props.setAdvancedStatPage(page);
+  context.setAdvancedStatPage(page);
   let pages = numPages();
   
   return(
     <div className="AdvancedFrame">
-      <Outlet context={props.wizard}/>
+      <Outlet context={context}/>
       <div className="AdvancedNav">
         <NavLink
           to={''+(page-1 === 0 ? pages : page-1)}

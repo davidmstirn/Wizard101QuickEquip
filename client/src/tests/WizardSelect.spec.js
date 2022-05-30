@@ -1,41 +1,51 @@
 import {render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom'
-import { BrowserRouter } from 'react-router-dom';
-import WizardSelect from '../routes/WizardSelect.js';
+import MyRouter from '../routes/MyRouter.js';
+import { Router } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
 
 describe('<WizardSelect />', () => {
-  describe('clicking the first wizard', () => {
-    const mockCallback = jest.fn(x => x);
-    beforeEach(async () => {
-      let wizards = [
-        { id: 0, name: "Matthew Firebringer", school: "Fire", level: 150 },
-        { id: 1, name: "Artur Lifehaven", school: "Life", level: 150 }
-      ]
-      
-      render(<BrowserRouter><WizardSelect wizards={wizards} setSelectedWizard={mockCallback} /></BrowserRouter>);
+  describe('clicking wizards', () => {
+    beforeEach(() => {
+      const history = createMemoryHistory();
+      history.push('/select');
+      render(
+        <Router location={history.location} navigator={history}>
+          <MyRouter />
+        </Router>
+      );
+    });
+
+    it('renders wizard selector', () => {
+      expect(screen.getByTestId('wizardShow').textContent).toBe('Show');
+      expect(screen.getByTestId('wizardEdit').textContent).toBe('Edit');
     });
 
     it('selects the second wizard', () => {
       userEvent.click(screen.getByTestId('wizardOption1'));
-      expect(mockCallback.mock.calls.length).toBe(1);
-      expect(mockCallback.mock.calls[0][0]).toBe(1);
+      expect(screen.getByTestId('wizardOption1').checked).toBe(true);
+      expect(screen.getByTestId('wizardOption0').checked).toBe(false);
     });
 
-    it('selects the first wizard', () => {
+    it('first wizard already selected', () => {
       userEvent.click(screen.getByTestId('wizardOption0'));
-      expect(mockCallback.mock.calls.length).toBe(1);
-      expect(mockCallback.mock.calls[0][0]).toBe(0);
+      expect(screen.getByTestId('wizardOption0').checked).toBe(true);
+      expect(screen.getByTestId('wizardOption1').checked).toBe(false);
     });
 
-    it('selects the first wizard, then the second, then the first again', () => {
-      userEvent.click(screen.getByTestId('wizardOption0'));
+    it('selects the second wizard, then the first, then the second again', () => {
       userEvent.click(screen.getByTestId('wizardOption1'));
+      expect(screen.getByTestId('wizardOption1').checked).toBe(true);
+      expect(screen.getByTestId('wizardOption0').checked).toBe(false);
+
       userEvent.click(screen.getByTestId('wizardOption0'));
-      expect(mockCallback.mock.calls.length).toBe(3);
-      expect(mockCallback.mock.calls[0][0]).toBe(0);
-      expect(mockCallback.mock.calls[1][0]).toBe(1);
-      expect(mockCallback.mock.calls[2][0]).toBe(0);
+      expect(screen.getByTestId('wizardOption0').checked).toBe(true);
+      expect(screen.getByTestId('wizardOption1').checked).toBe(false);
+      
+      userEvent.click(screen.getByTestId('wizardOption1'));
+      expect(screen.getByTestId('wizardOption1').checked).toBe(true);
+      expect(screen.getByTestId('wizardOption0').checked).toBe(false);
     });
   });
 });

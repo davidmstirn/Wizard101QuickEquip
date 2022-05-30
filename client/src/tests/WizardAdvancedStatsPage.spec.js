@@ -1,22 +1,39 @@
 import {render, screen} from '@testing-library/react';
-import { WizardAdvancedStatsPage } from '../components/WizardAdvancedStatsPage';
+import { WizardAdvancedStatsPage } from '../routes/WizardAdvancedStatsPage';
+import Router from 'react-router-dom';
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useParams: jest.fn(),
+}));
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useOutletContext: jest.fn(),
+}));
+
+let wizard = {
+  id: 0, name: "Matthew Firebringer", school: "Fire", level: 150,
+  damage: [150, 9, 9, 0, 0, 0, 0, 4],
+  damageFlat: [20, 0, 0, 0, 0, 0, 0, 0],
+  resist: [23, 23, 23, 23, 23, 23, 23, 23],
+  resistFlat: [0, 0, 101, 0, 0, 0, 0, 0],
+  accuracy: [40, 6, 6, 0, 0, 0, 0, 0],
+  critical: [700, 90, 90, 0, 0, 0, 0, 0],
+  block: [200, 220, 230, 200, 200, 200, 200, 200],
+  pierce: [21, 0, 0, 0, 0, 0, 0, 0],
+  stunResist: 5,
+  healing: [23, 16],
+  pipConversion: [600, 200, 200, 110, 110, 110, 110, 0],
+  powerPip: 99,
+  shadowPip: 120 }
 
 describe('<WizardAdvancedStatsPage />', () => {
   describe('showing the wizard advanced stats (page 1)', () => {
     beforeEach(async () => {
-      let wizard = { id: 0, name: "Matthew Firebringer", school: "Fire", level: 150,
-      damage: [150, 9, 9, 0, 0, 0, 0, 4],
-      damageFlat: [20, 0, 0, 0, 0, 0, 0, 0],
-      resist: [23, 23, 23, 23, 23, 23, 23, 23],
-      resistFlat: [0, 0, 101, 0, 0, 0, 0, 0],
-      accuracy: [40, 6, 6, 0, 0, 0, 0, 0],
-      critical: [700, 90, 90, 0, 0, 0, 0, 0],
-      block: [200, 220, 230, 200, 200, 200, 200, 200],
-      pierce: [21, 0, 0, 0, 0, 0, 0, 0],
-      stunResist: 5,
-      healing: [23, 16] }
-      
-      render(<WizardAdvancedStatsPage wizard={wizard} page='1' />);
+      jest.spyOn(Router, 'useParams').mockReturnValue({ pageId: 1});
+      jest.spyOn(Router, 'useOutletContext').mockReturnValue({ wizard: wizard});
+      render(<WizardAdvancedStatsPage />);
     });
 
     it('wizard 1st critical displayed', () => {
@@ -58,22 +75,9 @@ describe('<WizardAdvancedStatsPage />', () => {
 
   describe('showing the wizard advanced stats (page 2)', () => {
     beforeEach(async () => {
-      let wizard = { id: 0, name: "Matthew Firebringer", school: "Fire", level: 150,
-      damage: [150, 9, 9, 0, 0, 0, 0, 4],
-      damageFlat: [20, 0, 0, 0, 0, 0, 0, 0],
-      resist: [23, 23, 23, 23, 23, 23, 23, 23],
-      resistFlat: [0, 0, 101, 0, 0, 0, 0, 0],
-      accuracy: [40, 6, 6, 0, 0, 0, 0, 0],
-      critical: [700, 90, 90, 0, 0, 0, 0, 0],
-      block: [200, 220, 230, 200, 200, 200, 200, 200],
-      pierce: [21, 0, 0, 0, 0, 0, 0, 0],
-      stunResist: 5,
-      healing: [23, 16],
-      pipConversion: [600, 200, 200, 110, 110, 110, 110, 0],
-      powerPip: 99,
-      shadowPip: 120 }
-      
-      render(<WizardAdvancedStatsPage wizard={wizard} page='2' />);
+      jest.spyOn(Router, 'useParams').mockReturnValue({ pageId: 2});
+      jest.spyOn(Router, 'useOutletContext').mockReturnValue({ wizard: wizard});
+      render(<WizardAdvancedStatsPage />);
     });
 
     it('wizard 1st pip conversion displayed', () => {

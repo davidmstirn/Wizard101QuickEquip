@@ -1,15 +1,25 @@
 import {render, screen} from '@testing-library/react';
-import WizardBasicStats from '../components/WizardBasicStats';
+import WizardBasicStats from '../routes/WizardBasicStats';
+import Router from 'react-router-dom';
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useOutletContext: jest.fn(),
+}));
+
+let wizard = {
+  damage: [150, 9, 9, 0, 0, 0, 0, 4],
+  damageFlat: [20, 0, 0, 0, 0, 0, 0, 0],
+  resist: [23, 23, 23, 0, 0, 0, 0, 0],
+  resistFlat: [0, 0, 101, 0, 0, 0, 0, 0],
+  accuracy: [40, 6, 6, 0, 0, 0, 7, 0]
+}
 
 describe('<WizardBasicStats />', () => {
   describe('showing the wizard basic stats', () => {
     beforeEach(async () => {
-      render(<WizardBasicStats
-        damage={[150, 9, 9, 0, 0, 0, 0, 4]}
-        damageFlat={[20, 0, 0, 0, 0, 0, 0, 0]}
-        resist={[23, 23, 23, 0, 0, 0, 0, 0]}
-        resistFlat={[0, 0, 101, 0, 0, 0, 0, 0]}
-        accuracy={[40, 6, 6, 0, 0, 0, 7, 0]} />);
+      jest.spyOn(Router, 'useOutletContext').mockReturnValue({ wizard: wizard});
+      render(<WizardBasicStats />);
     });
 
     it('wizard 1st damage displayed', () => {
