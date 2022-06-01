@@ -1,0 +1,12 @@
+.BackpackList {
+    margin: 10px;
+}
+
+.BackpackList table {
+    width: 100%;
+}
+
+.BackpackList td {
+    text-align: left;
+    border: 1px solid black;
+}

@@ -8,16 +8,11 @@ export default function Wizard() {
   let params = useParams();
   let wizard = getWizard(parseInt(params.wizardId));
   return (
-    <div className='SpellbookFrame'>
-      <h2 className='SpellbookHeader'>{wizard.name}</h2>
-      <div className='Spellbook'>
-        <div className='Character'>
-          <WizardBio school={wizard.school} level={wizard.level}/>
-          <div className='Divider'/>
-          <div className='Stats'>
-            <WizardStatPager wizard={wizard}/>
-          </div>
-        </div>
+    <div className='Character'>
+      <WizardBio school={wizard.school} level={wizard.level}/>
+      <div className='Divider'/>
+      <div className='Stats'>
+        <WizardStatPager wizard={wizard}/>
       </div>
     </div>
   );

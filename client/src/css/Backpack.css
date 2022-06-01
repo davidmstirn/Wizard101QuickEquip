@@ -1,0 +1,32 @@
+.BackpackNav {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color:tan;
+    border-bottom: 2px solid black;
+}
+  
+.BackpackNav a {
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #673f16;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+
+.BackpackNav a.current {
+    border-bottom: 3px solid black;
+}
+  
+.BackpackNav + * {
+    margin-top: 20px;
+}
+
+.BackpackContent {
+    display: grid;
+    grid-template-columns: 47.5% 5% 47.5%;
+    align-items: start;
+    justify-content: center;
+}

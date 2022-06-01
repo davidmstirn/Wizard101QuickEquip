@@ -12,7 +12,19 @@ let wizards = [
     healing: [23, 16],
     pipConversion: [600, 200, 200, 110, 110, 110, 110, 0],
     powerPip: 99,
-    shadowPip: 120 },
+    shadowPip: 120,
+    items: [
+      { name: "Dragoon's Fiery Helm", type: "hats" },
+      { name: "Robes of Malistaire's Ire", type: "robes" },
+      { name: "Dragoon's Fiery Boots", type: "boots" },
+      { name: "Supreme Volcanic Staff", type: "wands" },
+      { name: "Edge of the Raging Daystar", type: "athames" },
+      { name: "Morganthe's Dark Charm", type: "amulets" },
+      { name: "Magician's Fire Ring", type: "rings" },
+      { name: "Tiny Sunny", type: "pets" },
+      { name: "Creepy Clown Car", type: "mounts" },
+      { name: "Fiery Paradox Deck", type: "decks" }
+    ] },
   { id: 1, name: "Artur Lifehaven", school: "Life", level: 150 }
 ];
 
@@ -96,4 +108,8 @@ export function getPowerPip(wizard) {
 
 export function getShadowPip(wizard) {
   return wizard.shadowPip;
+}
+
+export function getItems(wizard) {
+  return wizard.items;
 }

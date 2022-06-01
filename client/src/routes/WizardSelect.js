@@ -47,7 +47,7 @@ function WizardSelect(props) {
     <div className="WizardSelector">
       {wizardList}
       <Link
-        to={`/show/${selectedWizard}/basic`}
+        to={`/show/${selectedWizard}/character/basic`}
         data-testid='wizardShow'>
           Show
       </Link>
